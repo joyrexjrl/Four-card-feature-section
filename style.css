@@ -1,0 +1,233 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+picture,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root{
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+
+    --shadow: hsla(211, 23%, 79%, 0.6);
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+h1{
+    font-size: 1.7rem;
+}
+
+h1, h2{
+    color: var(--very-dark-blue);
+}
+
+p{
+    color: var(--grayish-blue);
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.container{
+    max-width: 400px;
+    margin-inline: auto;
+    background-color: var(--very-light-gray);
+    padding: 5rem 0;
+}
+
+.inner-container{
+    width: 85%;
+    margin-inline: auto;
+}
+
+.hero{
+    text-align: center;
+}
+
+.heading{
+    font-weight: 200;
+}
+
+.heading-bold{
+    font-weight: 600;
+}
+
+.heading-info{
+    margin-top: 2rem;
+    max-width: 50ch;
+    margin-inline: auto;
+}
+
+.feature-cards{
+    margin: 5rem 0;
+}
+
+.card-flex{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card{
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px var(--shadow);
+}
+
+.card-info{
+    font-size: .8rem;
+}
+
+.card-image{
+    margin-top: 2rem;
+
+}
+
+.card-1{
+    border-top: 4px solid var(--cyan);
+}
+
+.card-2{
+    border-top: 4px solid var(--red);
+}
+
+.card-3{
+    border-top: 4px solid var(--orange);
+}
+
+.card-4{
+    border-top: 4px solid var(--blue);
+}
+
+.attribution{
+    text-align: center;
+    color: var(--very-dark-blue);
+}
+
+.attribution a{
+    text-decoration: none;
+    color: var(--very-dark-blue);
+    transition: .2s ease-in;
+}
+
+.attribution a:hover{
+    color: var(--grayish-blue);
+}
+
+@media (min-width: 1000px){
+    .container{
+        width: 100%;
+        max-width: 1300px;
+    }
+
+    .feature-cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        ". card2 ."
+        "card1 card2 card4"
+        "card1 card3 card4"
+        ". card3 .";
+    }
+
+    .card-1{
+        grid-area: card1;
+    }
+
+    .card-2{
+        grid-area: card2;
+    }
+
+    .card-3{
+        grid-area: card3;
+    }
+
+    .card-4{
+        grid-area: card4;
+    }
+}
